@@ -1,18 +1,8 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import NewsItem from '../components/NewsItem'
-const aylienAPi = [
-  {
-  title: '123',
-  text: 'ddeeefef',
-  image: ''
-},
-  {
-  title: '12dwdw3',
-  text: 'ddeedwdwdwefef'
-}
-]
+import NewsItem from '../components/NewsItem';
+import aylienAPI from '../api/aylien';
 
 class NewsList extends Component {
     state = {
@@ -23,8 +13,9 @@ class NewsList extends Component {
         super()
         this.getNewsItems()
     }
-    getNewsItems = () => {
-      this.setState({newsItems: aylienAPi})
+    getNewsItems = async () => {
+      const stories = await aylienAPI.listStories();
+      this.setState({newsItems: []})
     }
     onSearchInputChange = (event) => {
         console.log("Search changed ..." + event.target.value)
