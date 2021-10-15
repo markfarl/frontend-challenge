@@ -1,18 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline } from "@material-ui/core";
+import * as React from "react";
+import Home from "./views/Home";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and start development.
-        </p>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <Home />
+    </>
   );
-}
+};
 
 export default App;
