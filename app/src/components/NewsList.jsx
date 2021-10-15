@@ -11,11 +11,11 @@ class NewsList extends Component {
     }
     constructor() {
         super()
-        this.getNewsItems()
     }
     getNewsItems = async () => {
       const stories = await aylienAPI.listStories();
-      this.setState({newsItems: []})
+      console.log(stories)
+      this.setState({newsItems: stories});
     }
     onSearchInputChange = (event) => {
         console.log("Search changed ..." + event.target.value)
